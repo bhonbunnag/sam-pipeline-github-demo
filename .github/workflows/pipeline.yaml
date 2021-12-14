@@ -38,8 +38,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          # trigger the tests here
+      - run: cd hello-world
+      - run: npm install
+      - run: npm test
 
   delete-feature:
     if: startsWith(github.event.ref, 'feature') && github.event_name == 'delete'
